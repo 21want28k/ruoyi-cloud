@@ -40,7 +40,6 @@
         <commons-collections.version>3.2.2</commons-collections.version>
         <transmittable-thread-local.version>2.12.2</transmittable-thread-local.version>
 
-        <nacos_nginx>127.0.0.1:8881</nacos_nginx>
     </properties>
 
     <!-- 依赖声明 -->
@@ -248,6 +247,22 @@
         </dependencies>
     </dependencyManagement>
 
+    <profiles>
+        <profile>
+            <id>mac</id>
+            <properties>
+                <activeProfile>mac</activeProfile>
+                <nacos_nginx>10.195.27.180:8881</nacos_nginx>
+            </properties>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <activeProfile>dev</activeProfile>
+                <nacos_nginx>127.0.0.1:8881</nacos_nginx>
+            </properties>
+        </profile>
+    </profiles>
     <modules>
         <module>ruoyi-auth</module>
         <module>ruoyi-gateway</module>
